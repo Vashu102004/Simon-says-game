@@ -10,11 +10,11 @@ let level = 0;
 
 let h2 = document.querySelector("h2");
 
-//  NEW — scoreboard elements added
+
 let currentLevelDisplay = document.querySelector("#current-level");
 let bestScoreDisplay = document.querySelector("#best-score");
 
-// NEW — LocalStorage se best score load karna
+
 let bestScore = localStorage.getItem("bestScore") || 0;
 bestScoreDisplay.innerText = bestScore;
 
@@ -42,7 +42,7 @@ function levelUp() {
 
     h2.innerText = `Level ${level}`;
 
-    //  NEW — scoreboard me level update
+    
     currentLevelDisplay.innerText = level;
 
     let randIdx = Math.floor(Math.random() * 4);
@@ -61,13 +61,13 @@ function checkAns(idx) {
         }
     } else {
 
-        //  NEW — Game Over animation
+        
         document.body.classList.add("game-over");
         setTimeout(() => document.body.classList.remove("game-over"), 400);
 
         h2.innerHTML = `Game Over! Your Score: <b>${level}</b> <br>Press any key to restart`;
 
-        // NEW — Best Score Update call
+        
         updateBestScore();
         
         reset();
@@ -88,7 +88,7 @@ let allBtns = document.querySelectorAll(".btn");
 allBtns.forEach(btn => btn.addEventListener("click", btnPress));
 
 
-//  NEW — Compare and Save Best Score
+
 function updateBestScore() {
     if (level > bestScore) {
         bestScore = level;
@@ -97,11 +97,10 @@ function updateBestScore() {
     }
 }
 
-//  Changed — Reset scoreboard also
 function reset() {
     started = false;
     gameSeq = [];
     userSeq = [];
     level = 0;
-    currentLevelDisplay.innerText = level; // ✅ NEW
+    currentLevelDisplay.innerText = level; 
 }
