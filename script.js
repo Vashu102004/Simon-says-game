@@ -1,5 +1,3 @@
-
-
 let gameSeq = [];
 let userSeq = [];
 
@@ -13,7 +11,6 @@ let h2 = document.querySelector("h2");
 
 let currentLevelDisplay = document.querySelector("#current-level");
 let bestScoreDisplay = document.querySelector("#best-score");
-
 
 let bestScore = localStorage.getItem("bestScore") || 0;
 bestScoreDisplay.innerText = bestScore;
@@ -42,7 +39,6 @@ function levelUp() {
 
     h2.innerText = `Level ${level}`;
 
-    
     currentLevelDisplay.innerText = level;
 
     let randIdx = Math.floor(Math.random() * 4);
@@ -61,13 +57,12 @@ function checkAns(idx) {
         }
     } else {
 
-        
+   
         document.body.classList.add("game-over");
         setTimeout(() => document.body.classList.remove("game-over"), 400);
 
         h2.innerHTML = `Game Over! Your Score: <b>${level}</b> <br>Press any key to restart`;
 
-        
         updateBestScore();
         
         reset();
@@ -88,7 +83,6 @@ let allBtns = document.querySelectorAll(".btn");
 allBtns.forEach(btn => btn.addEventListener("click", btnPress));
 
 
-
 function updateBestScore() {
     if (level > bestScore) {
         bestScore = level;
@@ -96,6 +90,7 @@ function updateBestScore() {
         bestScoreDisplay.innerText = bestScore;
     }
 }
+
 
 function reset() {
     started = false;
