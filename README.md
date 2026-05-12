@@ -3,7 +3,7 @@ A fun memory game where you repeat the color sequence to level up. Your best sco
 
 # 🎮 Simon Says Game
 
-A classic digital recreation of the popular memory game "Simon Says" built using **HTML, CSS, and JavaScript**. Test your memory by repeating the sequence of colors!
+A classic digital recreation of the popular memory game "Simon Says" built using **HTML, CSS, and JavaScript**. Test your memory by repeating the sequence of colors
 
 ## 🌟 Live Demo
 *(Add your live project link here, e.g., GitHub Pages or Netlify)*
